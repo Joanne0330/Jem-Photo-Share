@@ -1,0 +1,8 @@
+<h1> Hello </h1>
+<% if @posts.present? %>
+  <% @posts.each do |post| %>
+    <li>
+      <%= post.photo %>
+    </li>
+  <% end %>   
+<% end %>     
