@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 gem 'mongoid', '~> 7.0.5'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
+  gem 'database_cleaner'
+  gem 'capybara', '~> 3.29'
+end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use Puma as the app server
