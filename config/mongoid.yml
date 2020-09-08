@@ -1,13 +1,9 @@
 development:
-  # Configure available database clients. (required)
   clients:
-    # Defines the default client. (required)
     default:
-      # Defines the name of the default database that Mongoid can connect to.
-      # (required).
-      database: jem_photo_share_development
-      # Provides the hosts the default client can connect to. Must be an array
-      # of host:port pairs. (required)
+      uri: 
+client = Mongo::Client.new(&apos;mongodb+srv://Allegro0330:<password>@cluster0.iavuu.mongodb.net/<dbname>?retryWrites=true&w=majority&apos;)
+
       hosts:
         - localhost:27017
       options:
