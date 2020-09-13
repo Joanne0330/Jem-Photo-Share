@@ -1,0 +1,12 @@
+<%= form_with model: @post, local: true do |form| %>
+    <p>
+        <%= form.label :title %><br>
+        <%= form.text_area :title %>
+    </p>
+
+    <p>
+        <%= form.submit class: "buttons"%>
+    </p>
+
+
+<% end %>    
