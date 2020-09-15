@@ -1,4 +1,10 @@
-<h1> Hello </h1>
+<h1> Hello! Welcome to Jem Photo Share! </h1>
+
+<% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+  <% end %>
 <%= link_to 'Upload new post', new_post_path %>
 <% if @posts.present? %>
   <% @posts.reverse.each do |post| %>
