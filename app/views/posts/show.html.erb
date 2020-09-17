@@ -1,0 +1,10 @@
+<%= @post.title %>
+<br>
+<h2>Comments</h2>
+
+<% @post.comments.each do |comment| %>
+  <li>
+    <%= comment.text %>
+  </li>
+<%end %>
+

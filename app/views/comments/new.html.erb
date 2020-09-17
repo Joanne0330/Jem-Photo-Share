@@ -1,0 +1,11 @@
+<h2>Add a comment:</h2>
+<%= form_with model: @comment, url: post_comments_path(@post), local: true do |form| %>
+  
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
