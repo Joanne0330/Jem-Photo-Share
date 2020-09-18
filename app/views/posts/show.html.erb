@@ -1,10 +1,13 @@
 <%= @post.title %>
+<%= link_to 'Back to posts', posts_path %>
 <br>
 <h2>Comments</h2>
 
 <% @post.comments.each do |comment| %>
   <li>
     <%= comment.text %>
+    <%= button_to "Delete This comment", post_comment_path, method: :delete, 
+      data: { confirm: 'Are you sure?' } %>
   </li>
 <%end %>
 
