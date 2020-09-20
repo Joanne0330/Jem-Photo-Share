@@ -6,10 +6,10 @@
 <br>
 <h2>Comments</h2>
 
-<% @post.comments.each do |comment| %>
+<% @post.comments.reverse.each do |comment| %>
   <li>
     <%= comment.text %>
-    <%= button_to "Delete This Comment", post_path(@post), method: :delete, 
+    <%= button_to "Delete This Comment", [comment.post, comment], method: :delete, 
     data: { confirm: 'Are you sure?' } %>
   </li>
 <%end %>

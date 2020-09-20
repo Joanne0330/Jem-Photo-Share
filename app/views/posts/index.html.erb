@@ -10,10 +10,11 @@
   <% @posts.reverse.each do |post| %>
     <li>
       <%= post.title %>
-      <%= button_to "To make comments of this post", new_post_comment_path(post), method: :get %>
-      <%= button_to "To see all comments of this post", post_path(post), method: :get %>
       <%= button_to "Delete This Post", post_path(post), method: :delete, 
       data: { confirm: 'Are you sure?' } %>
+      <%= button_to "See the comments", post_path(post), method: :get %>
+      <%= button_to "Make a comments", new_post_comment_path(post), method: :get %>
+      
 
     </li>
   <% end %>   
