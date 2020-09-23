@@ -1,8 +1,7 @@
-class Post
+class Comment
   include Mongoid::Document
   include Mongoid::Timestamps
- 
-  has_many :comments
-  field :title, type: String
+  belongs_to :post
   
+  field :text, type: String
 end

@@ -12,6 +12,10 @@
       <%= post.title %>
       <%= button_to "Delete This Post", post_path(post), method: :delete, 
       data: { confirm: 'Are you sure?' } %>
+      <%= button_to "See the comments", post_path(post), method: :get %>
+      <%= button_to "Make a comments", new_post_comment_path(post), method: :get %>
+      
+
     </li>
   <% end %>   
 

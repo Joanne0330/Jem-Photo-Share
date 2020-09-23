@@ -1,0 +1,16 @@
+<%= @post.title %>
+<br>
+<%= link_to 'Back to posts', posts_path %>
+<br>
+<%= link_to 'Make a comment', new_post_comment_path(@post), method: :get %>
+<br>
+<h2>Comments</h2>
+
+<% @post.comments.reverse.each do |comment| %>
+  <li>
+    <%= comment.text %>
+    <%= button_to "Delete This Comment", [comment.post, comment], method: :delete, 
+    data: { confirm: 'Are you sure?' } %>
+  </li>
+<%end %>
+
