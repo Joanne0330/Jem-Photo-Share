@@ -9,7 +9,7 @@
 <% @post.comments.reverse.each do |comment| %>
   <li>
     <%= comment.text %>
-    <%= button_to "Delete This Comment", [comment.post, comment], method: :delete, 
+    <%= button_to "Delete comment", [comment.post, comment], method: :delete, 
     data: { confirm: 'Are you sure?' } %>
   </li>
 <%end %>
