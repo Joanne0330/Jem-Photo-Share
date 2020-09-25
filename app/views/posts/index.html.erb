@@ -4,23 +4,33 @@
     <div class="alert alert-info">
       <%= msg %>
     </div>
-  <% end %>
-<%= link_to 'Upload new post', new_post_path %>
-<% if @posts.present? %>
-  <% @posts.reverse.each do |post| %>
-    <li>
-      <%= post.title %>
-        <% if post.image.present? %>  
-          <%= image_tag post.image.url(:medium) %>
-        <% end %>
+<% end %>
 
-      <%= link_to "Delete This Post", post_path(post), method: :delete, 
-      data: { confirm: 'Are you sure?' } %>
-      <%= button_to "See comments", post_path(post), method: :get %>
-      <%= button_to "Make comments", new_post_comment_path(post), method: :get %>
+<div style="display: flex; flex-direction: row; justify-content: center">
+  <%= link_to 'Upload new post', new_post_path %>
+</div>
+
+    <% if @posts.present? %>
+      <% @posts.reverse.each do |post| %>
+      <div class="container" style="display: flex; flex-direction: row; justify-content: space-evenly">
+          <div class="card" style="width: 18rem; margin: 1em;">
+            <% if post.image.present? %>  
+              <%= image_tag post.image.url(:medium) %>
+            <% end %>
+          <br>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= post.title %>
+            </h5>
+          <br>
+            <%= link_to "Delete This Post", post_path(post), method: :delete, 
+            data: { confirm: 'Are you sure?' } %>
+            <%= button_to "See comments", post_path(post), method: :get %>
+            <%= button_to "Make comments", new_post_comment_path(post), method: :get %>
+          </div>  
+          </div>
+        </div>
+      <% end %>   
+
+    <% end %>   
       
-
-    </li>
-  <% end %>   
-
-<% end %>     

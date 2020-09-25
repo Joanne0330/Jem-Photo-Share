@@ -1,6 +1,11 @@
-<h2>Please create a new post below:</h2>
-<div class="new_post_box">
+<h1>Please create a new post below:</h1>
+<br>
+<div style="display: flex; flex-direction: row; justify-content: center">
+  <%= link_to 'Back', posts_path %>
+</div>
+<br>
+<div class="new_post_box" style="display: flex; flex-direction: row; justify-content: center">
   <%= render 'form' %>
 
-  <%= link_to 'Back', posts_path %>
+
 </div>

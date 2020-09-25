@@ -1,7 +1,13 @@
-a {
-   background-color: red;
+
+.card {
+    background-color: rgb(245, 245, 245);
 }
 
+h1 {
+    text-align: center;
+}
 input[type="submit" i] {
-    background-color: rgb(240, 226, 33) !important
+    background-color: rgb(44, 180, 180) !important;
+    color: white;
+
 }
