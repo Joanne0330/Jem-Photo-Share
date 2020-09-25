@@ -1,5 +1,6 @@
 <h1> Hello! Welcome to Jem Photo Share! </h1>
 
+
 <% flash.each do |type, msg| %>
     <div class="alert alert-info">
       <%= msg %>
@@ -7,7 +8,8 @@
 <% end %>
 
 <div style="display: flex; flex-direction: row; justify-content: center">
-  <%= link_to 'Upload new post', new_post_path %>
+  <%= link_to ('<i class="fa fa-camera"></i>').html_safe, new_post_path  %>
+ 
 </div>
 
     <% if @posts.present? %>
@@ -23,7 +25,8 @@
               <%= post.title %>
             </h5>
           <br>
-            <%= link_to "Delete This Post", post_path(post), method: :delete, 
+
+            <%= link_to ('<i class="fas fa-trash"></i>').html_safe, post_path(post), method: :delete, 
             data: { confirm: 'Are you sure?' } %>
             <%= button_to "See comments", post_path(post), method: :get %>
             <%= button_to "Make comments", new_post_comment_path(post), method: :get %>

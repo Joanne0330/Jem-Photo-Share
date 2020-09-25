@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 gem 'mongoid', '~> 7.0.5'
 
-
+gem "font-awesome-rails"
 gem "mongoid-paperclip"
 
 group :development, :test do
