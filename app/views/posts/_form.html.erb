@@ -1,4 +1,5 @@
-    
+  <div class="form-styling">
+  
     <%= form_with model: @post, local: true do |form| %>
         
         <%= form.file_field :image %>
@@ -12,5 +13,5 @@
         <%= form.submit class: "buttons"%>
     </p>
 
-
-<% end %>    
+    <% end %>    
+</div>

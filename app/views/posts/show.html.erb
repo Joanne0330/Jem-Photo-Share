@@ -1,16 +1,33 @@
-<%= @post.title %>
+<div style="display: flex; flex-direction: row; justify-content: center">
+  <%= link_to 'Back to posts', posts_path %>
+</div> 
 <br>
-<%= link_to 'Back to posts', posts_path %>
+<div style="display: flex; flex-direction: row; justify-content: center">
+  <%= link_to 'Make a comment', new_post_comment_path(@post), method: :get %>
+</div>  
 <br>
-<%= link_to 'Make a comment', new_post_comment_path(@post), method: :get %>
 <br>
-<h2>Comments</h2>
+<div class="container" style="display: flex; flex-direction: row; justify-content: space-evenly">
+  <div class="card" style="width: 16rem; margin: 1em; padding: 0.5em; border-radius: 3%">
+    <%= image_tag @post.image.url(:medium) %>
+    <br>
+    <h4>
+      <%= @post.title %>
+    </h4> 
+  </div>
+</div>  
+<br>
+<br>
 
-<% @post.comments.reverse.each do |comment| %>
-  <li>
-    <%= comment.text %>
-    <%= button_to "Delete comment", [comment.post, comment], method: :delete, 
-    data: { confirm: 'Are you sure?' } %>
-  </li>
-<%end %>
+<div class="comments-container" style="align: center">
+  <h3>Comments:</h3>
+
+  <% @post.comments.reverse.each do |comment| %>
+    <li>
+      <%= comment.text %>
+      <%= button_to "Delete comment", [comment.post, comment], method: :delete, 
+      data: { confirm: 'Are you sure?' } %>
+    </li>
+  <%end %>
+</div>
 
