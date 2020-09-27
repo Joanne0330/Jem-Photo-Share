@@ -11,29 +11,37 @@
   <%= link_to ('<i class="fa fa-camera"></i>').html_safe, new_post_path  %>
  
 </div>
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly">
 
     <% if @posts.present? %>
       <% @posts.reverse.each do |post| %>
-      <div class="container" style="display: flex; flex-direction: row; justify-content: space-evenly">
           <div class="card" style="width: 18rem; margin: 1em; padding: 0.5em; border-radius: 3%">
             <% if post.image.present? %>  
               <%= image_tag post.image.url(:medium) %>
             <% end %>
-          <br>
-          <div class="card-body">
-            <h5 class="card-title">
-              <%= post.title %>
-            </h5>
-          <br>
+            <br>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= post.title %>
+              </h5>
+            <br>
 
-            <%= link_to ('<i class="fas fa-trash"></i>').html_safe, post_path(post), method: :delete, 
-            data: { confirm: 'Are you sure?' } %>
-            <%= button_to "See comments", post_path(post), method: :get %>
-            <%= button_to "Make comments", new_post_comment_path(post), method: :get %>
-          </div>  
+              <%= link_to ('<i class="fas fa-trash"></i>').html_safe, post_path(post), method: :delete, 
+              data: { confirm: 'Are you sure?' } %>
+              <br>
+              <%= link_to post_path(post), class: "btn btn-primary", method: :get do %>
+                <i class="far fa-comments"></i>
+                <span>See comments</span>
+              <% end %>  
+
+              <%= link_to new_post_comment_path(post), class: "btn btn-primary", method: :get do %>
+                <i class="far fa-comment-dots"></i>
+                <span>Make comment</span>
+              <% end %>
+            </div>  
           </div>
-        </div>
-      <% end %>   
-
     <% end %>   
+          
+  <% end %>   
+</div>
       

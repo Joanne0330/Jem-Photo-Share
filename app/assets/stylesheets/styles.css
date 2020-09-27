@@ -1,3 +1,18 @@
+a {
+    color: #17a2b8;
+}
+
+.btn {
+    border-radius: 10em;
+}
+
+.btn:hover {
+    background-color: rgb(2, 196, 199) !important;
+}
+.btn-primary {
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+}
 
 .card {
     background-color: rgb(245, 245, 245);
