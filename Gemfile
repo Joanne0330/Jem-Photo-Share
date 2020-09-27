@@ -6,6 +6,7 @@ gem 'mongoid', '~> 7.0.5'
 
 gem "font-awesome-rails"
 gem "mongoid-paperclip"
+gem 'devise'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
