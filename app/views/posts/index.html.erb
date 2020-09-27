@@ -1,7 +1,7 @@
 <h1> Hello! Welcome to Jem Photo Share! </h1>
 
 <div style="display: flex; flex-direction: row; justify-content: center">
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 </div>
 
 <% flash.each do |type, msg| %>
