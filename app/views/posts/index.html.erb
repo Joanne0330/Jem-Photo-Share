@@ -1,5 +1,8 @@
 <h1> Hello! Welcome to Jem Photo Share! </h1>
 
+<div style="display: flex; flex-direction: row; justify-content: center">
+  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+</div>
 
 <% flash.each do |type, msg| %>
     <div class="alert alert-info">
@@ -8,9 +11,9 @@
 <% end %>
 
 <div style="display: flex; flex-direction: row; justify-content: center">
-  <%= link_to ('<i class="fa fa-camera"></i>').html_safe, new_post_path  %>
- 
+  <%= link_to ('<i class="fa fa-camera"></i>').html_safe, new_post_path  %> 
 </div>
+
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly">
 
     <% if @posts.present? %>
