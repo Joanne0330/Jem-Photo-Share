@@ -28,9 +28,10 @@
                 <%= post.title %>
               </h5>
             <br>
-
+            <% if post.user_id == current_user.id %>
               <%= link_to ('<i class="fas fa-trash"></i>').html_safe, post_path(post), method: :delete, 
               data: { confirm: 'Are you sure?' } %>
+            <% end %>
               <br>
               <%= link_to post_path(post), class: "btn btn-primary", method: :get do %>
                 <i class="far fa-comments"></i>
