@@ -14,7 +14,7 @@ class Post
         :medium   => ['250x250',    :jpg]
       }
     
-  has_many :comments
+  has_many :comments, dependent: :destroy
   field :title, type: String
   validates_attachment_content_type :image, content_type: /image/    
   
